@@ -80,7 +80,7 @@ jobs:
           kernel_config: ${{ github.event.inputs.kernel_config }}
 
       - name: Upload Kernel to Release
-        uses: Unicorn9x/release-action@ophub-main
+        uses: ncipollo/release-action@main
         if: env.PACKAGED_STATUS == 'success' && !cancelled()
         with:
           tag: kernel_${{ env.PACKAGED_OUTPUTTAGS }}
